@@ -1,0 +1,51 @@
+
+.container-asked {
+    width: 98vw;
+    height: 97vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    position: relative;
+    background-color: white;
+    min-width: 300px;
+    width: 70%;
+    max-width: 600px;
+    padding: 10px;
+}
+.categorie{
+    opacity: 0.3;
+    text-align: left;
+}
+.asked{
+    padding: 10px;
+}
+.container-img{
+    width: 100%;
+}
+.img-asked{
+    height: 200px;
+}
+.btn{
+    background-color: white;
+    width: 60%;
+    max-width: 550px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+}
+.number{
+    position: absolute;
+    opacity: 0.3;
+    top: 10px;
+    right: 10px;
+}
+.point{
+    padding: 10px;
+    color: white;
+}
