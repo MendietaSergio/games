@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { Asked } from './Pages/Asked'
 
 function App() {
