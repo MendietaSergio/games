@@ -49,3 +49,11 @@
     padding: 10px;
     color: white;
 }
+.failed{
+    background-color: pink !important;
+}
+.success{
+    background-color: lightgreen !important;
+    color: black;
+    font-weight: bolder;
+}
