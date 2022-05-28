@@ -3,6 +3,7 @@ import { getAsked } from '../Mock/getAsked'
 import '../css/Asked.css'
 import { Button } from '../Components/Button/Button'
 import swal from 'sweetalert';
+import { Loading } from '../Components/Button/Loading';
 
 export const Asked = () => {
     const [questions, setQuestions] = useState({})
@@ -13,7 +14,8 @@ export const Asked = () => {
     const [point, setPoint] = useState(0)
     const [cant, setCant] = useState(0)
     const [cantAsked, setCantAsked] = useState(2)
-    let finalized=false;
+    const [loading, setLoading] = useState(false)
+    let finalized = false;
     let positions = 0;
     const Asked = async () => {
         positions = Math.floor(Math.random() * getAsked.length)
@@ -42,7 +44,7 @@ export const Asked = () => {
             document.getElementById(select.target.value).classList.add('failed')
         }
         setDisabled(true)
-        if ((point + 1) === cantAsked) {
+        if ((point) === (cantAsked-1)) {
             console.log("POINT IF ", point);
             swal({
                 title: "¡Felicitaciones!",
@@ -57,40 +59,47 @@ export const Asked = () => {
                             .then(() => {
                                 setCantAsked(cantAsked + 2)
                                 nextQuenstion()
+                                setLoading(true)
                             })
                     } else {
                         swal("Gracias por haber jugado =)")
                             .then(() => {
-                                finalized=true
+                                finalized = true
                                 nextQuenstion()
+                                // setLoading(false)
                             })
                     }
                 })
         } else {
-
+            setLoading(true)
             nextQuenstion()
         }
     }
     const nextQuenstion = (next) => {
 
-        setTimeout(() => {
-            document.getElementById(questions.respuesta).classList.remove('success')
-            document.getElementById(questions.incorrecta1).classList.remove('failed')
-            document.getElementById(questions.incorrecta2).classList.remove('failed')
-            document.getElementById(questions.incorrecta3).classList.remove('failed')
-            if (finalized) {
-                console.log("finalizado");
-                setCant(0)
-                setPoint(0)
-                setCantAsked(2)
-                setDisabled(false)
-            } else {
+        if (finalized) {
+            console.log("finalizado");
+            setCant(0)
+            setPoint(0)
+            setCantAsked(2)
+            setDisabled(false)
+            setLoading(false)
+            reset()
+        } else {
+            setTimeout(() => {
                 Asked()
                 setDisabled(false)
-            }
-        }, 5000);
+                setLoading(false)
+                reset()
+            }, 5000);
+        }
     }
-
+    const reset = () => {
+        document.getElementById(questions.respuesta).classList.remove('success')
+        document.getElementById(questions.incorrecta1).classList.remove('failed')
+        document.getElementById(questions.incorrecta2).classList.remove('failed')
+        document.getElementById(questions.incorrecta3).classList.remove('failed')
+    }
     return (
 
         <div className='container-asked'>
@@ -123,6 +132,7 @@ export const Asked = () => {
                             disabled={disabled}
                         />
                     ))}
+                    {loading && <Loading asked={true} />}
                 </>
             )}
         </div>
