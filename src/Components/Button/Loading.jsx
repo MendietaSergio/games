@@ -10,7 +10,7 @@ export const Loading = ({
                 <div className='loading-asked'>
                     <div className='bar-asked'></div>
                 </div>
-                <span>Siguiente pregunta</span>
+                <span className='next-asked'>Siguiente pregunta</span>
             </>
         )
     } else {
