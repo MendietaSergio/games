@@ -128,6 +128,7 @@ export const Asked = () => {
                             success={success}
                             failed={failed}
                             disabled={disabled}
+                            asked={true}
                         />
                     ))}
                     {loading && <Loading asked={true} />}
