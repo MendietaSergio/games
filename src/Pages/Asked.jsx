@@ -12,6 +12,7 @@ export const Asked = () => {
     const [answers, setAnswers] = useState([])
     const [disabled, setDisabled] = useState(false)
     const [point, setPoint] = useState(0)
+    const [fallidos, setFallidos] = useState(0)
     const [cant, setCant] = useState(0)
     const [cantAsked, setCantAsked] = useState(2)
     const [loading, setLoading] = useState(false)
@@ -41,14 +42,14 @@ export const Asked = () => {
             document.getElementById(questions.incorrecta2).classList.add('failed')
             document.getElementById(questions.incorrecta3).classList.add('failed')
         } else {
+            setFallidos(fallidos+1)
             document.getElementById(select.target.value).classList.add('failed')
         }
         setDisabled(true)
-        if ((point) === (cantAsked-1)) {
-            console.log("POINT IF ", point);
+        if (fallidos === 2) {
             swal({
                 title: "¡Felicitaciones!",
-                text: `Llegaste hasta las ${point + 1} preguntas correctas`,
+                text: `Llegaste hasta las ${point} preguntas correctas`,
                 // icon: "success",
                 buttons: true,
                 dangerMode: true
@@ -66,7 +67,6 @@ export const Asked = () => {
                             .then(() => {
                                 finalized = true
                                 nextQuenstion()
-                                // setLoading(false)
                             })
                     }
                 })
@@ -78,7 +78,6 @@ export const Asked = () => {
     const nextQuenstion = (next) => {
 
         if (finalized) {
-            console.log("finalizado");
             setCant(0)
             setPoint(0)
             setCantAsked(2)
@@ -106,7 +105,6 @@ export const Asked = () => {
             {questions === undefined ? (null) : (
                 <>
                     <div className="point">
-
                         <span>{point} / {cant}</span>
                     </div>
                     <div className="header">

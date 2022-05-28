@@ -68,12 +68,13 @@
     height: 5px;
     margin: 0 auto;
     background-color: rgb(67, 67, 67);
-    
-    /* border: 4px solid black; */
 }
 .bar-asked{
     animation: bar 5s infinite ease-in-out;
     background-color: white;
+}
+.next-asked{
+    color: white;
 }
 @keyframes bar{
     0% {
