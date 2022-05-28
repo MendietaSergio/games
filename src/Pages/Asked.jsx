@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { getAsked } from '../Mock/getAsked'
 import '../css/Asked.css'
 import { Button } from '../Components/Button/Button'
+import swal from 'sweetalert';
+
 export const Asked = () => {
     const [questions, setQuestions] = useState({})
     const [success, setSuccess] = useState('')
@@ -10,6 +12,8 @@ export const Asked = () => {
     const [disabled, setDisabled] = useState(false)
     const [point, setPoint] = useState(0)
     const [cant, setCant] = useState(0)
+    const [cantAsked, setCantAsked] = useState(2)
+    let finalized=false;
     let positions = 0;
     const Asked = async () => {
         positions = Math.floor(Math.random() * getAsked.length)
@@ -38,16 +42,52 @@ export const Asked = () => {
             document.getElementById(select.target.value).classList.add('failed')
         }
         setDisabled(true)
-        nextQuenstion()
+        if ((point + 1) === cantAsked) {
+            console.log("POINT IF ", point);
+            swal({
+                title: "¡Felicitaciones!",
+                text: `Llegaste hasta las ${point + 1} preguntas correctas`,
+                // icon: "success",
+                buttons: true,
+                dangerMode: true
+            })
+                .then((select) => {
+                    if (select) {
+                        swal("A seguir sumando puntos...!!")
+                            .then(() => {
+                                setCantAsked(cantAsked + 2)
+                                nextQuenstion()
+                            })
+                    } else {
+                        swal("Gracias por haber jugado =)")
+                            .then(() => {
+                                finalized=true
+                                nextQuenstion()
+                            })
+                    }
+                })
+        } else {
+
+            nextQuenstion()
+        }
     }
-    const nextQuenstion = () => {
+    const nextQuenstion = (next) => {
+
         setTimeout(() => {
             document.getElementById(questions.respuesta).classList.remove('success')
             document.getElementById(questions.incorrecta1).classList.remove('failed')
             document.getElementById(questions.incorrecta2).classList.remove('failed')
             document.getElementById(questions.incorrecta3).classList.remove('failed')
-            Asked()
-            setDisabled(false)
+            if (finalized) {
+                console.log("finalizado");
+                setCant(0)
+                setPoint(0)
+                setCantAsked(2)
+                setDisabled(false)
+            } else {
+                Asked()
+                setDisabled(false)
+            }
         }, 5000);
     }
 
