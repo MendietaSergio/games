@@ -7,7 +7,7 @@ export const Button = ({
     disabled,
     asked,
     memo,
-    reset,
+    resetCards,
     text
 }) => {
   if (asked) {
@@ -29,7 +29,7 @@ export const Button = ({
       return(
         <button
         className={className}
-        onClick={() => reset()}
+        onClick={() => resetCards(true)}
       >
         {text}
       </button>
