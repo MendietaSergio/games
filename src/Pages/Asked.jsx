@@ -3,7 +3,7 @@ import { getAsked } from '../Mock/getAsked'
 import '../css/Asked.css'
 import { Button } from '../Components/Button/Button'
 import swal from 'sweetalert';
-import { Loading } from '../Components/Button/Loading';
+import { Loading } from '../Components/Loading/Loading';
 
 export const Asked = () => {
     const [questions, setQuestions] = useState({})
