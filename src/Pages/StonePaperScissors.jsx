@@ -5,6 +5,7 @@ import rock from '../Img/rock-paper-scissors/rock.png'
 import paper from '../Img/rock-paper-scissors/paper.png'
 import scissors from '../Img/rock-paper-scissors/scissors.png'
 import '../css/StonePaperScissors.css'
+import { Attempts } from "../Components/Attempts/Attempts";
 export const StonePaperScissors = () => {
   const [playerChoice, setPlayerChoice] = useState({});
   const [machineChoice, setMachineChoice] = useState({});
@@ -40,12 +41,14 @@ export const StonePaperScissors = () => {
 
   return (
     <div>
-      <main>
+      <main className="main-info">
         <section>
           <span className="player">Jugador: <span className="choice">{playerChoice.choice}</span></span>
+          {/* <Attempts player={true} cant={2}/> */}
         </section>
         <section>
           <span className="machine">Maquina: <span className="choice">{machineChoice.choice}</span> </span>
+          {/* <Attempts machine={true} cant={2}/> */}
         </section>
       </main>
       <div className="options">
