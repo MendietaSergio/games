@@ -12,18 +12,18 @@ export const StonePaperScissors = () => {
 
   const options = [
     {
-      choice: "piedra",
-      defeat: "tijera",
+      choice: "rock",
+      defeat: "scissors",
       img: rock
     },
     {
-      choice: "papel",
-      defeat: "piedra",
+      choice: "paper",
+      defeat: "rock",
       img: paper
     },
     {
-      choice: "tijera",
-      defeat: "papel",
+      choice: "scissors",
+      defeat: "paper",
       img: scissors
     },
   ];
