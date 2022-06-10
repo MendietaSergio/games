@@ -28,7 +28,6 @@ export const StonePaperScissors = () => {
     },
   ];
   const selectOptions = (event) => {
-      console.log(event);
     const player = options.find((e) => e.choice === event.target.alt);
     setPlayerChoice(player);
     rivalChoice();

@@ -23,7 +23,6 @@ export const Memo = () => {
     }
   };
   const randomCard = () => {
-    console.log(images, " images");
     shuffleArray(images);
     setCards(images);
   };
@@ -51,10 +50,8 @@ export const Memo = () => {
     if (firstCard.name && secondCard.name) {
       const match = firstCard.name === secondCard.name;
       match ? disableCards() : unflipCards();
-      console.log(match);
 
       if (match) {
-        console.log(true);
         setFoundPairs(foundPairs + 1);
       }
     }

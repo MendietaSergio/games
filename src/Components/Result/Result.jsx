@@ -1,8 +1,6 @@
 import React from "react";
 
 export const Result = ({ machineChoice, playerChoice }) => {
-  console.log("machineChoice ", machineChoice);
-  console.log("playerChoice ", playerChoice);
   let resultFinal;
 
   if (playerChoice.defeat === machineChoice.choice && playerChoice.choice) {
@@ -15,9 +13,11 @@ export const Result = ({ machineChoice, playerChoice }) => {
     machineChoice.defeat === playerChoice.choice &&
     playerChoice.choice
   ) {
-    resultFinal = <h1>
-    Ganador: <span className="result-title"> Maquina </span>
-  </h1>
+    resultFinal = (
+      <h1>
+        Ganador: <span className="result-title"> Maquina </span>
+      </h1>
+    );
   } else if (
     playerChoice.choice === machineChoice.choice &&
     playerChoice.choice
