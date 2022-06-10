@@ -8,32 +8,21 @@
 }
 
 .board-memo {
-    /* width: calc(100vh - 240px); */
-    max-width            : calc(100vw - 40px);
     display              : grid;
-    /* grid-gap          : 10px; */
-    margin               : auto;
     grid-template-columns: repeat(3, 1fr);
-    /* width             : 1000px; */
-    /* height            : 600px; */
+
 }
 
 .card {
     display   : inline-block;
     margin    : 5px;
-    /* height : calc(200px - 10px);
-    width     : calc(250px - 10px); */
     height    : 100px;
     width     : 100px;
     cursor    : pointer;
 }
 
 .stats {
-    width    : 400px;
-    margin   : 0 auto;
     color    : white;
-    padding  : 20px 0;
-    font-size: 1rem;
 }
 
 .clicks {
@@ -73,8 +62,6 @@
 }
 
 .card-image {
-    /* height: calc(200px - 10px);
-    width : calc(250px - 10px); */
     height: 100px;
     width : 100px;
 }
