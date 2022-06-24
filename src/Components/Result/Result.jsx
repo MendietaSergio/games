@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Result = ({ machineChoice, playerChoice }) => {
-  let resultFinal;
+  let resultFinal="";
 
   if (playerChoice.defeat === machineChoice.choice && playerChoice.choice) {
     resultFinal = (
