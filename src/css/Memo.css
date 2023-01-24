@@ -1,82 +1,84 @@
 .container-memo {
-    width          : 100vw;
-    height         : 100vh;
-    display        : flex;
-    flex-direction : column;
-    align-items    : center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .board-memo {
-    display              : grid;
-    grid-template-columns: repeat(3, 1fr);
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
-    display   : inline-block;
-    margin    : 5px;
-    height    : 100px;
-    width     : 100px;
-    cursor    : pointer;
+  display: inline-block;
+  margin: 5px;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
 }
 
 .stats {
-    color    : white;
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
-
+.memo-finish,
+.stats-finish {
+  padding: 10px;
+}
 .clicks {
-    float: inline-start;
+  float: inline-start;
 }
 
 .foundPairs {
-    float: inline-end;
+  float: inline-end;
 }
 
 .btn-reset-memo {
-    background-color: #44c767;
-    border-radius   : 28px;
-    border          : 1px solid #18ab29;
-    display         : inline-block;
-    cursor          : pointer;
-    color           : #ffffff;
-    font-family     : Arial;
-    font-size       : 17px;
-    padding         : 16px 31px;
-    text-decoration : none;
-    text-shadow     : 0px 1px 0px #2f6627;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
 }
 
 .btn-reset-memo:hover {
-    background-color: #5cbf2a;
+  background-color: #5cbf2a;
 }
 
 .btn-reset-memo:active {
-    position: relative;
-    top     : 1px;
+  position: relative;
+  top: 1px;
 }
 
 .reset {
-    position        : fixed;
-    background-color: #6d806a;
+  position: fixed;
+  background-color: #6d806a;
 }
 
 .card-image {
-    height: 100px;
-    width : 100px;
+  height: 100px;
+  width: 100px;
 }
 
-@media(min-width:768px) {
-    .card {
-        display: inline-block;
-        margin : 5px;
-        height : 100px;
-        width  : 100px;
-        cursor : pointer;
-    }
+@media (min-width: 768px) {
+  .card {
+    display: inline-block;
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+  }
 
-    .card-image {
-        height: 100px;
-        width : 100px;
-    }
+  .card-image {
+    height: 100px;
+    width: 100px;
+  }
 }

@@ -3,6 +3,7 @@ import { images } from "../Utils/Images";
 import "../css/Memo.css";
 import { Button } from "../Components/Button/Button";
 import { Card } from "../Components/Card/Card";
+import { Header } from "../Components/Header/Header";
 export const Memo = () => {
   const [cards, setCards] = useState([]);
   const [clicks, setClicks] = useState(0);
@@ -87,6 +88,8 @@ export const Memo = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className="container-memo">
       <div className="board-memo ">
         {loading ? (
@@ -108,10 +111,10 @@ export const Memo = () => {
           <span>falso</span>
         )}
       </div>
-      <div className="stats">
+      <div className={`stats ${finish ? "stats-finish":""}`}>
         {finish ? (
           <>
-            <span>Felicitaciones lo lograste en {clicks} intentos</span>
+            <span className="memo-finish">Felicitaciones lo lograste en {clicks} intentos</span>
             <Button
               className="btn-reset-memo"
               memo={true}
@@ -128,5 +131,6 @@ export const Memo = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
