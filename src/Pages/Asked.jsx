@@ -5,9 +5,10 @@ import { Button } from "../Components/Button/Button";
 import swal from "sweetalert";
 import { Loading } from "../Components/Loading/Loading";
 import { Header } from "../Components/Header/Header";
-import { ViewMessage } from "../Components/ViewMessage/ViewMessage";
 import imgSuccess from "../Img/Asked/success.png";
 import imgError from "../Img/Asked/errors.png";
+import { OptionsCategorie } from "../Components/OptionsCategorie/OptionsCategorie";
+
 export const Asked = () => {
   const [questions, setQuestions] = useState({});
   const [answers, setAnswers] = useState([]);
@@ -157,7 +158,7 @@ export const Asked = () => {
           </>
         )}
         {!viewQuestions && cantAsked > 0 && (
-          <ViewMessage
+          <OptionsCategorie
             setViewQuestions={setViewQuestions}
             setCategories={setCategories}
           />
