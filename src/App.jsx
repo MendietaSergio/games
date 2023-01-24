@@ -14,7 +14,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
         <Switch>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/asked" element={<Asked />} />
