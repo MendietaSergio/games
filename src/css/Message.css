@@ -1,0 +1,33 @@
+.container-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 80%;
+  position: absolute;
+  right: 20px;
+  top: 70px;
+}
+.closed-alert {
+  cursor: pointer;
+  width: 25px;
+  color: #423032;
+  height: 25px;
+  border-radius: 50px;
+  border: #423032 2px solid;
+  display: inline-table;
+}
+
+.container-text-alert {
+  width: 80%;
+}
+@media(min-width: 768px){
+  .container-message{
+    width: 450px;
+  }
+}
