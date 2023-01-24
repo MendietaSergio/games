@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAsked } from "../../Mock/getAsked";
-export const ViewMessage = ({ setCategories, setViewQuestions }) => {
+export const OptionsCategorie = ({ setCategories, setViewQuestions }) => {
   const [options, setOptions] = useState({});
   useEffect(() => {
     let hash = {};
